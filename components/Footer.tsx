@@ -41,7 +41,7 @@ const Footer = () => {
             >
               <Image
                 src={profile.img}
-                alt={profile.id}
+                alt={`${profile.id}`}
                 width={20}
                 height={20}
               />
