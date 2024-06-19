@@ -8,6 +8,7 @@ import animationData from "@/data/confetti.json";
 import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -69,10 +70,12 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className='w-full h-full absolute'>
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              width={0}
+              height={0}
+              className='w-full h-full object-cover'
             />
           )}
         </div>
@@ -83,13 +86,16 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              className='object-cover object-center w-full h-full'
+              width={0}
+              height={0}
+              className=' w-full h-full object-center'
             />
           )}
         </div>
+
         {id === 6 && (
           <BackgroundGradientAnimation>
             <div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div>
