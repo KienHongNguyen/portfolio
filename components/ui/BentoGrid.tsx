@@ -67,9 +67,9 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className='w-full h-full absolute'>
-          {img && (
+      <div className={`${id === 6 ? "flex justify-center" : ""} h-full`}>
+        {id === 1 && (
+          <div className='w-full h-full absolute'>
             <Image
               src={img}
               alt={img}
@@ -77,24 +77,32 @@ export const BentoGridItem = ({
               height={0}
               className='w-full h-full object-cover'
             />
-          )}
-        </div>
+          </div>
+        )}
 
-        <div
-          className={`absolute right-0 -bottom-5 ${
-            id === 5 && "w-full opacity-80"
-          } `}
-        >
-          {spareImg && (
+        {id === 4 && (
+          <div className='w-full h-full absolute'>
             <Image
               src={spareImg}
               alt={spareImg}
               width={0}
               height={0}
-              className=' w-full h-full object-center'
+              className='w-[50%] h-[50%] md:h-[60%] md:w-[60%] lg:h-[80%] absolute right-0 bottom-0'
             />
-          )}
-        </div>
+          </div>
+        )}
+
+        {id === 5 && (
+          <div className='w-full h-full absolute'>
+            <Image
+              src={img}
+              alt={img}
+              width={0}
+              height={0}
+              className='w-[60%] md:w-[80%] h-full absolute right-0'
+            />
+          </div>
+        )}
 
         {id === 6 && (
           <BackgroundGradientAnimation>
@@ -148,6 +156,8 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
+
+          {id === 5 && <div></div>}
 
           {id === 6 && (
             <div className='mt-5 relative'>
